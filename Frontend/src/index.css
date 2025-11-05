@@ -1,0 +1,473 @@
+/* Cybersecurity Theme CSS for WhisperWall X */
+:root {
+  --neon-blue: #00f3ff;
+  --neon-purple: #d100ff;
+  --neon-green: #39ff14;
+  --dark-bg: #0b0b1a;
+  --darker-bg: #070714;
+  --medium-bg: #12122a;
+  --light-text: #e0e0ff;
+  --accent: #ff2975;
+}
+
+body {
+  background-color: var(--dark-bg);
+  font-family: 'Rajdhani', 'Orbitron', sans-serif;
+  color: var(--light-text);
+  margin: 0;
+  padding: 0;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(0, 243, 255, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(209, 0, 255, 0.05) 0%, transparent 20%),
+    linear-gradient(135deg, rgba(11, 11, 26, 0.8) 0%, rgba(7, 7, 20, 1) 100%);
+  background-attachment: fixed;
+}
+
+/* Navbar styling */
+nav.bg-gray-800 {
+  background-color: var(--darker-bg);
+  border-bottom: 1px solid rgba(0, 243, 255, 0.3);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 100;
+}
+
+nav::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue), var(--neon-green));
+  opacity: 0.7;
+}
+
+nav .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+nav a.text-xl {
+  color: var(--neon-blue);
+  text-shadow: 0 0 8px rgba(0, 243, 255, 0.6);
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+nav a.text-xl:hover {
+  color: var(--neon-green);
+  text-shadow: 0 0 12px rgba(57, 255, 20, 0.8);
+}
+
+nav a.px-3 {
+  color: var(--light-text);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+nav a.px-3:not(.bg-blue-600)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--neon-purple);
+  transition: width 0.3s ease;
+}
+
+nav a.px-3:not(.bg-blue-600):hover::after {
+  width: 80%;
+}
+
+nav a.bg-blue-600 {
+  background: linear-gradient(135deg, var(--neon-purple), var(--neon-blue));
+  color: var(--light-text);
+  font-weight: 600;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+nav a.bg-blue-600::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.2), 
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+nav a.bg-blue-600:hover::before {
+  left: 100%;
+}
+
+nav a.bg-blue-600:hover {
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+/* Container styling */
+.container.mx-auto {
+  position: relative;
+}
+
+.bg-gray-100 {
+  background-color: transparent;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.min-h-screen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    rgba(11, 11, 26, 0.2) 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.flex.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.max-w-md {
+  max-width: 32rem;
+  width: 90%;
+  position: relative;
+}
+
+.bg-white {
+  background-color: var(--darker-bg);
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  box-shadow: 
+    0 0 15px rgba(0, 243, 255, 0.5),
+    0 0 30px rgba(209, 0, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.space-y-8 > * + * {
+  margin-top: 2rem;
+}
+
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-gray-800 {
+  color: var(--neon-blue);
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.7);
+  letter-spacing: 1px;
+}
+
+h2.text-gray-800 {
+  position: relative;
+  display: inline-block;
+}
+
+h2.text-gray-800::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));
+  border-radius: 3px;
+}
+
+input {
+  background-color: rgba(18, 18, 42, 0.6);
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  color: var(--light-text);
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--neon-green);
+  box-shadow: 0 0 0 2px rgba(57, 255, 20, 0.2);
+}
+
+input::placeholder {
+  color: rgba(224, 224, 255, 0.6);
+}
+
+button {
+  background: linear-gradient(135deg, var(--neon-purple), var(--neon-blue));
+  color: var(--light-text);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.2), 
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+button:hover {
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.border-t {
+  border-top-width: 1px;
+}
+
+.border-gray-300 {
+  border-color: rgba(209, 0, 255, 0.3);
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.text-gray-500, .text-gray-600 {
+  color: rgba(224, 224, 255, 0.8);
+  text-shadow: 0 0 3px rgba(209, 0, 255, 0.3);
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-blue-600, a.text-blue-600 {
+  color: var(--neon-green);
+  text-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a.text-blue-600:hover {
+  text-shadow: 0 0 8px rgba(57, 255, 20, 0.7);
+  text-decoration: underline;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.space-x-4 > * + * {
+  margin-left: 1rem;
+}
+
+.space-x-1 > * + * {
+  margin-left: 0.25rem;
+}
+
+/* Animation effects */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 243, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 243, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 243, 255, 0);
+  }
+}
+
+.max-w-md {
+  animation: pulse 2s infinite;
+}
+
+/* Cybersecurity elements */
+.max-w-md::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--neon-green);
+  box-shadow: 0 0 10px var(--neon-green);
+  animation: blink 1.5s infinite;
+  z-index: 2;
+}
+
+/* Hacker-style typing effect for login title */
+h2.text-gray-800 {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(25) 1s 1 normal both;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Form enhancements */
+form {
+  position: relative;
+}
+
+form::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--neon-blue), 
+    transparent
+  );
+}
+
+/* Message styling */
+.text-center.text-sm.text-blue-600 {
+  padding: 10px;
+  border-radius: 4px;
+  background-color: rgba(57, 255, 20, 0.1);
+  border-left: 3px solid var(--neon-green);
+}
+
+/* Add some responsive adjustments */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .p-8 {
+    padding: 1.5rem;
+  }
+  
+  nav .container .flex {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
